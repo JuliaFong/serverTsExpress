@@ -7,3 +7,5 @@
 * Learn how to to create back-end routes
 * Create Express routers 
 * Understand how to utilize the Typescript Express.js library
+* Learn how to understand the different properties that an object has in TypeScript
+* Learn how type definition file tells us about the different properties that a javascript library exposes to us.
