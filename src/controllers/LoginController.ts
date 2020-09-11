@@ -1,7 +1,7 @@
 import { Router, Request, Response, NextFunction } from 'express';
-import { get } from 'http';
+import { get } from './decorators/routes';
 
-@AbortController('/')
+@controller('/')
 class LoginController {
     @get('/login')
     getLogin(req: Request, res: Response): void {
