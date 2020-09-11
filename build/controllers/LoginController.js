@@ -1,16 +1,24 @@
 "use strict";
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var http_1 = require("http");
 var LoginController = /** @class */ (function () {
     function LoginController() {
     }
-    LoginController.prototype.get = function () { };
+    LoginController.prototype.getLogin = function (req, res) {
+        res.send("\n        <form method=\"POST\">\n            <div>\n                <label>Email</label>\n                <input name=\"email\" />\n            </div>\n            <div>\n                <label>Password</label>\n                <input name=\"password\" type=\"password\" />\n            </div>\n            <button>Submit</button>\n        </form>\n        ");
+    };
+    ;
+    __decorate([
+        http_1.get('/login')
+    ], LoginController.prototype, "getLogin", null);
+    LoginController = __decorate([
+        AbortController('/')
+    ], LoginController);
     return LoginController;
 }());
-(function (req, res) {
-    if (req.session && req.session.loggedIn) {
-        res.send("\n          <div>\n              <div>You are logged in </div>\n              <a href=\"/logout\">Logout</a>\n          </div>\n          ");
-    }
-    else {
-        res.send("\n          <div>\n              <div>You are not logged in</div>\n              <a href=\"/login\">Login</a>\n          </div>\n          ");
-    }
-});
-;
