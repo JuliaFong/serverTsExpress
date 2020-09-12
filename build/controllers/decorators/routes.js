@@ -9,6 +9,7 @@ function routeBinder(method) {
             Reflect.defineMetadata('method', method, target, key);
         };
     }
+    ;
 }
 exports.get = routeBinder('get');
 exports.put = routeBinder('put');
