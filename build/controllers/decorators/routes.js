@@ -5,14 +5,14 @@ require("reflect-metadata");
 function routeBinder(method) {
     function get(path) {
         return function (target, key, desc) {
-            Reflect.defineMetadata('path', path, target, key);
-            Reflect.defineMetadata('method', method, target, key);
+            Reflect.defineMetadata('MetadataKeys.path', path, target, key);
+            Reflect.defineMetadata('MetadataKeys.method', method, target, key);
         };
     }
     ;
 }
-exports.get = routeBinder('get');
-exports.put = routeBinder('put');
-exports.post = routeBinder('post');
-exports.del = routeBinder('get');
-exports.patch = routeBinder('patch');
+exports.get = routeBinder('Methods.get');
+exports.put = routeBinder('Methods.put');
+exports.post = routeBinder('Methods.post');
+exports.del = routeBinder('Methods.del');
+exports.patch = routeBinder('Methods.patch');
