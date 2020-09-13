@@ -28,3 +28,15 @@ var LoginController = /** @class */ (function () {
     ], LoginController);
     return LoginController;
 }());
+router.post('/login', function (req, res) {
+    var _a = req.body, email = _a.email, password = _a.password;
+    if (email && password && email === 'hi@hi.com' && password === 'password') {
+        //mark this person as logged in
+        req.session = { loggedIn: true };
+        //redirect them to the root route
+        res.redirect('/');
+    }
+    else {
+        res.send('Invalid email or password');
+    }
+});
