@@ -23,7 +23,7 @@ class LoginController {
 
     @post('/login')
     @bodyValidator('email', 'password') 
-    postLogin(req: RequestWithBody, res: Response) {
+    postLogin(req: Request, res: Response) {
     
         const { email, password } = req.body;
     

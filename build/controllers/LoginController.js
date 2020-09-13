@@ -32,7 +32,6 @@ var LoginController = /** @class */ (function () {
         req.session = null;
         res.redirect('/');
     };
-    var _a;
     __decorate([
         decorators_1.get('/login'),
         __metadata("design:type", Function),
@@ -43,7 +42,7 @@ var LoginController = /** @class */ (function () {
         decorators_1.post('/login'),
         decorators_1.bodyValidator('email', 'password'),
         __metadata("design:type", Function),
-        __metadata("design:paramtypes", [typeof (_a = typeof RequestWithBody !== "undefined" && RequestWithBody) === "function" ? _a : Object, Object]),
+        __metadata("design:paramtypes", [Object, Object]),
         __metadata("design:returntype", void 0)
     ], LoginController.prototype, "postLogin", null);
     __decorate([
