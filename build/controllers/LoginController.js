@@ -28,7 +28,8 @@ var LoginController = /** @class */ (function () {
     ], LoginController);
     return LoginController;
 }());
-router.post('/login', function (req, res) {
+postLogin(req, RequestWithBody, res, Response);
+{
     var _a = req.body, email = _a.email, password = _a.password;
     if (email && password && email === 'hi@hi.com' && password === 'password') {
         //mark this person as logged in
@@ -39,4 +40,4 @@ router.post('/login', function (req, res) {
     else {
         res.send('Invalid email or password');
     }
-});
+}

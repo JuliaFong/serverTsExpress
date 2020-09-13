@@ -1,5 +1,5 @@
 import {  Request, Response, NextFunction } from 'express';
-import { get, controller } from './decorators';
+import { get, controller, bodyValidator, post } from './decorators';
 
 
 @controller('/auth')
@@ -22,7 +22,9 @@ class LoginController {
     };
 }
 
-router.post('/login', (req: RequestWithBody, res: Response) => {
+@post('/login')
+@bodyValidator('email', 'password')
+postLogin(req: RequestWithBody, res: Response) {
     const { email, password } = req.body;
 
     if (email && password && email === 'hi@hi.com' && password ==='password') {
@@ -33,4 +35,4 @@ router.post('/login', (req: RequestWithBody, res: Response) => {
     } else {
         res.send('Invalid email or password')
     }
-});
+}

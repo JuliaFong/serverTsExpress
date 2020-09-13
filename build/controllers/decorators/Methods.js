@@ -6,6 +6,6 @@ var Methods;
     Methods["get"] = "get";
     Methods["post"] = "post";
     Methods["patch"] = "patch";
-    Methods["del"] = "delete";
+    Methods["del"] = "del";
     Methods["put"] = "put";
 })(Methods = exports.Methods || (exports.Methods = {}));
